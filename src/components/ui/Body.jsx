@@ -4,7 +4,7 @@ import filterData from "./FilterData";
 import Shimmer from "./Shimmer";
 import RestaurantCard from "./RestaurantCard";
 import { Link } from "react-router-dom";
-import "./Body.css";
+import "./Body.css"; 
 import { AllResto_Web_Listing } from "../../config";
 
 const Body = () => {
@@ -13,27 +13,18 @@ const Body = () => {
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     async function getRestro() {
-        try {
-            const response = await fetch('https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5879042&lng=73.7373439&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING', {
-                method: 'GET',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',  // Add this header
-                    'Origin': 'https://your-website-url.com'  // Replace with your actual site URL
-                }
-            });
-    
-            const json = await response.json();  // Get JSON directly from the response
-    
-            const restaurants = json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-            setAllRestaurants(restaurants);
-            setFilteredRestaurants(restaurants);
-            console.log("Fetched Restaurants: ", restaurants);
-    
-        } catch (error) {
-            console.error('Error:', error);
-        }
+        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5879042&lng=73.7373439&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+
+        const json = await data.json();
+        
+        // const restaurants = json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;         // Night data
+
+
+        const restaurants = json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        setAllRestaurants(restaurants);
+        setFilteredRestaurants(restaurants);
     }
-    
+
     useEffect(() => {
         getRestro();
     }, []);

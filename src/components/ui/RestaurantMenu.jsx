@@ -17,13 +17,7 @@ const RestaurantMenu = () => {
 
     async function getRestaurantInfo() {
         try {
-            const response = await fetch("https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5912716&lng=73.73890899999999&restaurantId=" + id, {
-                method: 'GET',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',  // Add this header
-                    'Origin': 'https://bite-box-food-app.vercel.app/'  // Replace with your actual site URL
-                }
-            });
+            const response = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5912716&lng=73.73890899999999&restaurantId=" + id);  
             const json = await response.json();
             console.log("Fetched Restaurant: ", json.data);
             setRestaurant(json.data?.cards[2]?.card?.card?.info);
