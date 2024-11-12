@@ -1,0 +1,12 @@
+.logo{
+  height: 100px;
+  width: 180px;
+}
+
+.shimmer-card{
+
+  width: 200px;
+  height: 150px;
+  background-color: lightgray;
+  margin: 20px;
+}

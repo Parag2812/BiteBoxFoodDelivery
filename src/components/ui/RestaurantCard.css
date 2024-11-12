@@ -1,0 +1,64 @@
+.retro-card {
+    width: 300px;
+    background-color: #f1e6cd;
+    border: 4px solid #8b4513;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', Courier, monospace;
+    transition: transform 0.3s ease;
+  }
+  
+  .retro-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .retro-card-image {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .retro-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .retro-card-content {
+    padding: 20px;
+  }
+  
+  .retro-card-title {
+    font-size: 24px;
+    color: #8b4513;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .retro-card-locality {
+    font-size: 16px;
+    color: #5c3317;
+    margin-bottom: 15px;
+  }
+  .retro-card-cuisines {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+  
+  .retro-card-rating {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #8b4513;
+  }
+  
+  .retro-card-stars {
+    color: #ffd700;
+    margin-right: 10px;
+  }
+  
+  .retro-card-rating-text {
+    font-weight: bold;
+  }

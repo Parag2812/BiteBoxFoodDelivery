@@ -1,0 +1,49 @@
+/* Error.css */
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(135deg, #f1892a, #291909);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.error-container h1 {
+    font-size: 4em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 0.3em;
+}
+
+.error-container h2 {
+    font-size: 2em;
+    color: #000000;
+    margin: 0.3em 0;
+}
+
+.error-container p {
+    font-size: 1.5em;
+    color: #000000;
+    margin: 1em 0;
+}
+
+.home-link {
+    font-size: 1em;
+    padding: 0.7em 1.2em;
+    color: #333;
+    background: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home-link:hover {
+    background: #87dae3;
+    color: #333;
+    transform: translateY(-2px);
+}
